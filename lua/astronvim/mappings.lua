@@ -21,6 +21,9 @@ local sections = {
 
 -- Normal --
 -- Standard Operations
+vim.api.nvim_set_keymap("v", "y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "d", '"+d', { noremap = true, silent = true })
+
 maps.n["j"] = { "v:count == 0 ? 'gj' : 'j'", expr = true, desc = "Move cursor down" }
 maps.n["k"] = { "v:count == 0 ? 'gk' : 'k'", expr = true, desc = "Move cursor up" }
 maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" }
@@ -351,7 +354,7 @@ if is_available("neovim-session-manager") then
 	maps.n["<leader>Sd"] = { "<cmd>SessionManager! delete_session<cr>", desc = "Delete session" }
 	maps.n["<leader>Sf"] = { "<cmd>SessionManager! load_session<cr>", desc = "Search sessions" }
 	maps.n["<leader>S."] =
-		{ "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
+	{ "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
 end
 if is_available("resession.nvim") then
 	maps.n["<leader>S"] = sections.S
@@ -527,7 +530,7 @@ if is_available("telescope.nvim") then
 				end -- don't search the astronvim core files
 				if vim.fn.isdirectory(dir) == 1 then
 					table.insert(search_dirs, dir)
-				end -- add directory to search if exists
+				end                     -- add directory to search if exists
 			end
 			if vim.tbl_isempty(search_dirs) then -- if no config folders found, show warning
 				utils.notify("No user configuration files found", vim.log.levels.WARN)
@@ -732,7 +735,7 @@ if is_available("nvim-dap") then
 			require("dap").terminate()
 		end,
 		desc = "Debugger: Stop",
-	} -- Shift+F5
+	}                -- Shift+F5
 	maps.n["<F21>"] = { -- Shift+F9
 		function()
 			vim.ui.input({ prompt = "Condition: " }, function(condition)

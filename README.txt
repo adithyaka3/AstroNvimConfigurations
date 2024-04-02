@@ -1,1 +1,2 @@
-Hello I am adding this to test git configs 
+hello this is a random text on line 1
+
