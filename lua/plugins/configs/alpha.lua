@@ -6,10 +6,7 @@ return function(_, opts)
     desc = "Add Alpha dashboard footer",
     once = true,
     callback = function()
-      local stats = require("lazy").stats()
-      local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
-      opts.section.footer.val =
-        { "AstroNvim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. "ms" }
+      opts.section.footer.val = { "I need a six month vacation twice a year!!" }
       pcall(vim.cmd.AlphaRedraw)
     end,
   })
