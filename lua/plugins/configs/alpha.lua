@@ -6,7 +6,7 @@ return function(_, opts)
     desc = "Add Alpha dashboard footer",
     once = true,
     callback = function()
-      opts.section.footer.val = { "I need a six month vacation twice a year!!" }
+      opts.section.footer.val = { "sudo rm -rf /" }
       pcall(vim.cmd.AlphaRedraw)
     end,
   })

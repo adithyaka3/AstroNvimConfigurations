@@ -23,6 +23,7 @@ local sections = {
 -- Standard Operations
 vim.api.nvim_set_keymap("v", "y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "d", '"+d', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "v", "v", { noremap = true, silent = true })
 
 maps.n["j"] = { "v:count == 0 ? 'gj' : 'j'", expr = true, desc = "Move cursor down" }
 maps.n["k"] = { "v:count == 0 ? 'gk' : 'k'", expr = true, desc = "Move cursor up" }

@@ -25,7 +25,7 @@ return {
 				status.component.git_diff(),
 				status.component.diagnostics(),
 				status.component.fill(),
-				-- status.component.cmd_info(),
+				status.component.cmd_info(),
 				status.component.fill(),
 				-- status.component.lsp(),
 				-- status.component.treesitter(),
@@ -75,11 +75,11 @@ return {
 					hl = { bg = "tabline_bg" },
 				},
 				status.heirline.make_buflist(status.component.tabline_file_info()), -- component for each buffer tab
-				status.component.fill({ hl = { bg = "tabline_bg" } }), -- fill the rest of the tabline with background color
-				{ -- tab list
+				status.component.fill({ hl = { bg = "tabline_bg" } }),  -- fill the rest of the tabline with background color
+				{                                                       -- tab list
 					condition = function()
 						return #vim.api.nvim_list_tabpages() >= 2
-					end, -- only show tabs if there are more than one
+					end,            -- only show tabs if there are more than one
 					status.heirline.make_tablist({ -- component for each tab
 						provider = status.provider.tabnr(),
 						hl = function(self)
