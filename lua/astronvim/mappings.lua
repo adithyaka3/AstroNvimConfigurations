@@ -715,15 +715,16 @@ if is_available("toggleterm.nvim") then
 	maps.n["<F7>"] = { '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle terminal" }
 	maps.i["<F7>"] = { "<Esc>" .. maps.n["<F7>"][1], desc = maps.n["<F7>"].desc }
 	maps.t["<F7>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" }
-	maps.n["<C-'>"] = maps.n["<F7>"] -- requires terminal that supports binding <C-'>
-	maps.i["<C-'>"] = maps.i["<F7>"] -- requires terminal that supports binding <C-'>
-	maps.t["<C-'>"] = maps.t["<F7>"] -- requires terminal that supports binding <C-'>
+	maps.i["<C-BS>"] = "<Esc>dbi"
+	maps.n["<C-'>"] = maps.n["<F7>"] -- e ti thaupports binding <C-'>
+	maps.i["<C-'>"] = maps.i["<F7>"] --  n
+	maps.t["<C-'>"] = maps.t["<F7>"] -- s terminalots binding <C-'>
 end
 
 if is_available("nvim-dap") then
 	maps.n["<leader>d"] = sections.d
 	maps.v["<leader>d"] = sections.d
-	-- modified function keys found with `showkey -a` in the terminal to get key code
+	-- moied function keys found with `showkey -a` in the terminal to get key code
 	-- run `nvim -V3log +quit` and search through the "Terminal info" in the `log` file for the correct keyname
 	maps.n["<F5>"] = {
 		function()
@@ -731,7 +732,7 @@ if is_available("nvim-dap") then
 		end,
 		desc = "Debugger: Start",
 	}
-	maps.n["<F17>"] = {
+	maps.n["<F12>"] = {
 		function()
 			require("dap").terminate()
 		end,
