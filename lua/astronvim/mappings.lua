@@ -720,7 +720,7 @@ if is_available("toggleterm.nvim") then
 	maps.i["<C-'>"] = maps.i["<F7>"] --  n
 	maps.t["<C-'>"] = maps.t["<F7>"] -- s terminalots binding <C-'>
 end
-
+maps.n["<leader><CR>"] = { "<Cmd>!python %<CR>" }
 if is_available("nvim-dap") then
 	maps.n["<leader>d"] = sections.d
 	maps.v["<leader>d"] = sections.d
