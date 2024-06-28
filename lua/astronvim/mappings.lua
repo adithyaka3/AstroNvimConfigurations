@@ -715,7 +715,7 @@ if is_available("toggleterm.nvim") then
 	maps.n["<F7>"] = { '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle terminal" }
 	maps.i["<F7>"] = { "<Esc>" .. maps.n["<F7>"][1], desc = maps.n["<F7>"].desc }
 	maps.t["<F7>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" }
-	maps.i["<C-BS>"] = "<Esc>dbi"
+	maps.i["<C-BS>"] = "<Esc>ciw"
 	maps.n["<C-'>"] = maps.n["<F7>"] -- e ti thaupports binding <C-'>
 	maps.i["<C-'>"] = maps.i["<F7>"] --  n
 	maps.t["<C-'>"] = maps.t["<F7>"] -- s terminalots binding <C-'>
